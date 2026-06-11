@@ -9,7 +9,7 @@ void options() {
   tactile(500, 650, 200, 100);
   rect(600, 700, 200, 100);
   textSize(40);
-  strokeWeight(1);
+  strokeWeight(3);
   fill(#172679);
   text("CONFIRM", 600, 700);
   fill(0);
@@ -33,12 +33,35 @@ void options() {
 
   fill(#03FFE8);
   rect(700, 250, 100, 100);
-  
-  fill(bird1Color);
-  circle(200,550,200);
-  
-  fill(bird2Color);
-  circle(600,550,200);
+
+  if (bird1Color == 1) {
+    fill(#FF037D);
+    circle(200,500,200);
+  }
+
+  if (bird1Color == 2) {
+    fill(#FF74B7);
+    circle(200,500,200);
+  }
+
+  if (bird1Color == 3) {
+    fill(#A50050);
+    circle(200,500,200);
+  }
+  if (bird2Color == 1) {
+    fill(#008175);
+    circle(600,500,200);
+  }
+
+  if (bird2Color == 2) {
+    fill(#76FFF2);
+    circle(600,500,200);
+  }
+
+  if (bird2Color == 3) {
+    fill(#03FFE8);
+    circle(600,500,200);
+  }
 }
 
 void optionClicks() {

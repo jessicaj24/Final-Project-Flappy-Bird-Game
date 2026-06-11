@@ -3,3 +3,7 @@ void pause() {
   textSize(80);
   text("PAUSED", 400, 400);
 }
+
+void pauseClicks(){
+  mode = GAME;
+}

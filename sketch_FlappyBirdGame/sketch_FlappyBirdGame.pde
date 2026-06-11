@@ -17,6 +17,10 @@ float speed;
 int score;
 int bird1Color;
 int bird2Color;
+int timer=150;
+
+boolean bird1Dead = false;
+boolean bird2Dead = false;
 
 void setup() {
   size(800, 800);

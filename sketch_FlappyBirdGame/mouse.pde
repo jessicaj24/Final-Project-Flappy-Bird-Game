@@ -2,7 +2,7 @@ void mouseReleased(){
    if (mode==INTRO){
     introClicks();
   } else if (mode==GAME){
-    pause();
+    gameClicks();
   } else if (mode==PAUSE){
     mode=GAME;
   } else if (mode==GAMEOVER){

@@ -1,6 +1,6 @@
 void intro() {
   background(#A1E3FC);
-  strokeWeight(1);
+  strokeWeight(3);
   fill(0);
   textSize(70);
   text("FLAPPY BIRD", 400, 300);
@@ -13,7 +13,7 @@ void intro() {
   text("START", 250, 450);
   text("OPTIONS", 550, 450);
   textSize(30);
-  text("press space to fly!",400,550);
+  text("press key 'a' and 'l' to fly!",400,550);
 }
 
 void introClicks() {
