@@ -14,6 +14,9 @@ float pipex, pipew;
 float gapy, gapsize;
 float speed;
 
+float cloud1x;
+float cloud2x;
+
 int score;
 int bird1Color;
 int bird2Color;
@@ -50,6 +53,9 @@ void setup() {
   bird2vy = 0;
   
   birdd=50;
+  
+  cloud1x=0;
+  cloud2x=400;
 }
 
 void draw() {

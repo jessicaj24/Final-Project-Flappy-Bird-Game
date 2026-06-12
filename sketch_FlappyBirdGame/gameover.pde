@@ -1,18 +1,16 @@
 void gameover() {
   background(#A1E3FC);
-  noStroke();
-  fill(255);
-  ellipse(140, 190, 100, 90);
-  ellipse(220, 200, 100, 100);
-  ellipse(175, 250, 50, 60);
-  ellipse(120, 230, 90, 90);
-  ellipse(100, 180, 80, 80);
+  cloud(cloud1x, 200);
+  cloud(cloud2x, 100);
+  cloud1x = cloud1x + 0.8;
+  cloud2x = cloud2x + 0.8;
+  if (cloud1x > width + 150) {
+    cloud1x = -150;
+  }
 
-  ellipse(550, 80, 80, 80);
-  ellipse(490, 70, 70, 70);
-  ellipse(530, 130, 100, 80);
-  ellipse(600, 100, 80, 80);
-  ellipse(620, 60, 80, 60);
+  if (cloud2x > width + 150) {
+    cloud2x = -150;
+  }
   strokeWeight(3);
   stroke(0);
   fill(0);
@@ -31,6 +29,13 @@ void gameover() {
   } else if (bird2Dead == true) {
     text("Bird 1 Wins!", 400, 600);
   }
+  if (score < 5) {
+    text("Bronze", 400, 500);
+  } else if (score < 10) {
+    text("Silver", 400, 500);
+  } else {
+    text("Gold", 400, 500);
+  }
 }
 
 void reset() {
@@ -45,4 +50,14 @@ void reset() {
   timer=160;
   bird1Dead = false;
   bird2Dead = false;
+}
+
+void cloud(float x, float y) {
+  noStroke();
+  fill(255);
+  ellipse(x+40, y-10, 100, 90);
+  ellipse(x+120, y, 100, 100);
+  ellipse(x+75, y+50, 50, 60);
+  ellipse(x+20, y+30, 90, 90);
+  ellipse(x, y-20, 80, 80);
 }

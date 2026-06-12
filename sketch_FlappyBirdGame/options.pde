@@ -1,7 +1,18 @@
 void options() {
 
   background(#A1E3FC);
+  cloud(cloud1x, 200);
+  cloud(cloud2x, 100);
+  cloud1x = cloud1x + 0.8;
+  cloud2x = cloud2x + 0.8;
+  if (cloud1x > width + 150) {
+    cloud1x = -150;
+  }
 
+  if (cloud2x > width + 150) {
+    cloud2x = -150;
+  }
+  stroke(0);
   fill(0);
   textSize(70);
   text("OPTIONS", 400, 100);
