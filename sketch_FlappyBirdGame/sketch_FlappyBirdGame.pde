@@ -1,3 +1,17 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+PImage gold;
+PImage silver;
+PImage bronze;
+
+Minim minim;
+AudioPlayer theme, coin, bump, gameover;
+
 int mode;
 final int INTRO=0;
 final int GAME=1;
@@ -28,6 +42,16 @@ boolean bird2Dead = false;
 void setup() {
   size(800, 800);
   mode = INTRO;
+  gold=loadImage("gold.png");
+  gold.resize(170,200);
+  silver=loadImage("silver.png");
+  silver.resize(170,200);
+  bronze=loadImage("bronze.png");
+  bronze.resize(170,200);
+  minim=new Minim(this);
+  theme= minim.loadFile("MUSIC.mp3");
+  gameover= minim.loadFile("FAILURE.wav");
+  coin= minim.loadFile("SUCCESS.wav");
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   imageMode(CENTER);
@@ -42,7 +66,7 @@ void setup() {
   score = 0;
   bird1Color = 1;
   bird2Color = 1;
-  
+
   bird1x = 200;
   bird2x = 200;
 
@@ -51,9 +75,9 @@ void setup() {
 
   bird1vy = 0;
   bird2vy = 0;
-  
+
   birdd=50;
-  
+
   cloud1x=0;
   cloud2x=400;
 }

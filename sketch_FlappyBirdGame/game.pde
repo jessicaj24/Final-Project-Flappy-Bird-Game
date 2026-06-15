@@ -1,4 +1,5 @@
 void game() {
+  theme.play();
   background(#A1E3FC);
   cloud(cloud1x, 200);
   cloud(cloud2x, 100);

@@ -1,4 +1,6 @@
 void gameover() {
+  theme.pause();
+  gameover.play();
   background(#A1E3FC);
   cloud(cloud1x, 200);
   cloud(cloud2x, 100);
@@ -29,16 +31,17 @@ void gameover() {
   } else if (bird2Dead == true) {
     text("Bird 1 Wins!", 400, 600);
   }
-  if (score < 5) {
-    text("Bronze", 400, 500);
-  } else if (score < 10) {
-    text("Silver", 400, 500);
+  if (score < 3) {
+    image(bronze, 400, 150);
+  } else if (score < 5) {
+    image(silver, 400, 150);
   } else {
-    text("Gold", 400, 500);
+    image(gold, 400, 150);
   }
 }
 
 void reset() {
+  theme.rewind();
   bird1y = 350;
   bird2y = 450;
 
