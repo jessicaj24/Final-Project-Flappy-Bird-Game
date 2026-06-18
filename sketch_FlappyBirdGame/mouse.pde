@@ -1,14 +1,14 @@
-void mouseReleased(){
-   if (mode==INTRO){
+void mouseReleased() {
+  if (mode==INTRO) {
     introClicks();
-  } else if (mode==GAME){
+  } else if (mode==GAME) {
     gameClicks();
-  } else if (mode==PAUSE){
+  } else if (mode==PAUSE) {
     mode=GAME;
-  } else if (mode==GAMEOVER){
+  } else if (mode==GAMEOVER) {
     reset();
     mode=INTRO;
-  } else if (mode==OPTIONS){
+  } else if (mode==OPTIONS) {
     optionClicks();
   }
 }

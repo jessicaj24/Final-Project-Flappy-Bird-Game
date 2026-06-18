@@ -31,11 +31,15 @@ void intro() {
 
 void introClicks() {
   if (mouseX>150 && mouseX<350 && mouseY>400 && mouseY<500) {
+    click.play();
+    click.rewind();
     mode = GAME;
     fill(250);
     strokeWeight(5);
     rect(250, 550, 200, 100);
   } else if (mouseX>450 && mouseX<650 && mouseY>400 && mouseY<500) {
+    click.play();
+    click.rewind();
     mode = OPTIONS;
     strokeWeight(5);
     rect(550, 500, 200, 100);

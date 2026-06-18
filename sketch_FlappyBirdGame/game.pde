@@ -15,16 +15,21 @@ void game() {
   strokeWeight(3);
   stroke(0);
   fill(0);
-  if (timer>120) {
+  if (countdownStarted == false) {
+    countdown.rewind();
+    countdown.play();
+    countdownStarted = true;
+  }
+  if (timer>140) {
     text("3", 400, 200);
   }
-  if (timer>90 && timer<120) {
+  if (timer>90 && timer<130) {
     text("2", 400, 200);
   }
-  if (timer>60 && timer<90) {
+  if (timer>40 && timer<80) {
     text("1", 400, 200);
   }
-  if (timer>30 && timer<60) {
+  if (timer>5 && timer<30) {
     text("GO!", 400, 200);
   }
   if (timer > 0) {

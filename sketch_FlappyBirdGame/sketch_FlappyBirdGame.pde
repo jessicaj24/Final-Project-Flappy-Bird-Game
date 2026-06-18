@@ -10,7 +10,7 @@ PImage silver;
 PImage bronze;
 
 Minim minim;
-AudioPlayer theme, coin, bump, gameover;
+AudioPlayer theme, gameover, click, countdown, sparkle;
 
 int mode;
 final int INTRO=0;
@@ -34,24 +34,33 @@ float cloud2x;
 int score;
 int bird1Color;
 int bird2Color;
-int timer=150;
+int timer=200;
 
 boolean bird1Dead = false;
 boolean bird2Dead = false;
 
+boolean gameoverStarted = false;
+
+boolean countdownStarted;
+boolean gameStarted;
+
 void setup() {
   size(800, 800);
   mode = INTRO;
+  countdownStarted = false;
+  gameStarted = false;
   gold=loadImage("gold.png");
-  gold.resize(170,200);
+  gold.resize(170, 200);
   silver=loadImage("silver.png");
-  silver.resize(170,200);
+  silver.resize(170, 200);
   bronze=loadImage("bronze.png");
-  bronze.resize(170,200);
+  bronze.resize(170, 200);
   minim=new Minim(this);
   theme= minim.loadFile("MUSIC.mp3");
   gameover= minim.loadFile("FAILURE.wav");
-  coin= minim.loadFile("SUCCESS.wav");
+  click= minim.loadFile("CLICK.wav");
+  countdown= minim.loadFile("COUNTDOWN.wav");
+  sparkle= minim.loadFile("SPARKLE.wav");
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   imageMode(CENTER);

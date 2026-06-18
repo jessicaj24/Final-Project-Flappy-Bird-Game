@@ -1,6 +1,10 @@
 void gameover() {
   theme.pause();
-  gameover.play();
+  if (gameoverStarted == false) {
+    gameover.rewind();
+    gameover.play();
+    gameoverStarted = true;
+  }
   background(#A1E3FC);
   cloud(cloud1x, 200);
   cloud(cloud2x, 100);
@@ -42,6 +46,13 @@ void gameover() {
 
 void reset() {
   theme.rewind();
+  countdown.pause();
+  countdown.rewind();
+  countdownStarted = false;
+  gameStarted = false;
+  gameover.pause();
+  gameover.rewind();
+  gameoverStarted = false;
   bird1y = 350;
   bird2y = 450;
 
