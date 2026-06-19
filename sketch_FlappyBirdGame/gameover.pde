@@ -61,7 +61,7 @@ void reset() {
   pipex = width;
   gapy = random(200, 600);
   score = 0;
-  timer=160;
+  timer=200;
   bird1Dead = false;
   bird2Dead = false;
 }
